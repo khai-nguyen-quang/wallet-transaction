@@ -29,8 +29,28 @@ npm run dev
 
 ## Environment installation for contract
 
+Hardhat installation guide
+https://hardhat.org/tutorial/creating-a-new-hardhat-project
+
 ```
 cd smart_contract
 npm init -y
+npm install --save-dev hardhat
+npm install --save-dev @nomicfoundation/hardhat-toolbox
+npm install dotenv --save-dev
+
+npx hardhat
+npx hardhat test
 
 ```
+
+Create file ./smart_contract/.env and add below content
+```
+//.env
+PRIVATE_KEY=<private_key_of_wallet_account>
+API_KEY=<dapp_api_key>
+API_HTTPS=<<dapp_api_http_link>
+```
+
+Deploy the smart contract onto goerli test network
+`npx hardhat run --network goerli scripts/deploy.js`
